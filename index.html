@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANAS — Cinematographer & Visual Archivist | Portfolio</title>
+  <meta name="description" content="Portfolio of Anas — Cinematographer, Visual Director & Architectural Archivist. Brutalist monochrome visual experience featuring 4K motion reels and architectural still studies.">
+  <meta name="keywords" content="Anas, Cinematography, Portfolio, Brutalism, Black and White, Glassmorphism, Architectural Photography, Filmmaking, 4K Video">
+  <meta name="author" content="Anas">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-monochrome" data-view="grid">
+  <!-- Custom Crosshair Cursor -->
+  <div class="custom-cursor" id="cursorDot"></div>
+  <div class="custom-cursor-follower" id="cursorFollower">
+    <span class="cursor-lens-text" id="cursorLensText">VIEW</span>
+  </div>
+
+  <!-- Noise Overlay for Brutalist Film Grain -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Audio / HUD Status Bar -->
+  <header class="glass-header" id="mainHeader">
+    <div class="header-inner">
+      <div class="brand-zone">
+        <a href="#hero" class="brand-logo" id="brandLogo">
+          <span class="brand-bracket">[</span>
+          <span class="brand-name">ANAS</span>
+          <span class="brand-bracket">]</span>
+        </a>
+        <div class="brand-subtitle">
+          <span class="pulse-indicator"></span>
+          <span>ARCHIVE // 2026</span>
+        </div>
+      </div>
+
+      <!-- Center Live HUD Metrics -->
+      <div class="header-hud desktop-only">
+        <div class="hud-item">
+          <span class="hud-label">LOC:</span>
+          <span class="hud-value">27.1751°N / 78.0421°E</span>
+        </div>
+        <div class="hud-divider">|</div>
+        <div class="hud-item">
+          <span class="hud-label">TIMECODE:</span>
+          <span class="hud-value" id="liveTimecode">00:00:00:00</span>
+        </div>
+        <div class="hud-divider">|</div>
+        <div class="hud-item">
+          <span class="hud-label">FPS:</span>
+          <span class="hud-value">60.00 RAW</span>
+        </div>
+      </div>
+
+      <!-- Header Controls -->
+      <div class="header-actions">
+        <!-- Audio Synthesizer Toggle -->
+        <button class="glass-btn audio-btn" id="audioToggle" title="Toggle Ambient Audio Soundscape" aria-label="Toggle Soundscape">
+          <div class="audio-bars" id="audioWave">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="btn-text">SOUND: <strong id="soundState">OFF</strong></span>
+        </button>
+
+        <!-- Monochrome / Spectrum Toggle -->
+        <button class="glass-btn mode-btn" id="modeToggle" title="Toggle Brutalist B&W / Spectrum Color" aria-label="Toggle Color Spectrum">
+          <span class="mode-icon">◐</span>
+          <span class="btn-text">MODE: <strong id="modeLabel">B&amp;W</strong></span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button class="glass-btn menu-toggle mobile-only" id="menuToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Glass Dock Navigation -->
+  <nav class="glass-dock" id="glassDock" aria-label="Quick Navigation">
+    <a href="#hero" class="dock-link active" data-target="hero">
+      <span class="dock-index">01</span>
+      <span class="dock-label">HERO</span>
+    </a>
+    <a href="#reels" class="dock-link" data-target="reels">
+      <span class="dock-index">02</span>
+      <span class="dock-label">CINEMA [16]</span>
+    </a>
+    <a href="#stills" class="dock-link" data-target="stills">
+      <span class="dock-index">03</span>
+      <span class="dock-label">PLATES [10]</span>
+    </a>
+    <a href="#parallax-focus" class="dock-link" data-target="parallax-focus">
+      <span class="dock-index">04</span>
+      <span class="dock-label">MONOGRAPH</span>
+    </a>
+    <a href="#statement" class="dock-link" data-target="statement">
+      <span class="dock-index">05</span>
+      <span class="dock-label">MANIFESTO</span>
+    </a>
+    <a href="#contact" class="dock-link" data-target="contact">
+      <span class="dock-index">06</span>
+      <span class="dock-label">CONTACT</span>
+    </a>
+  </nav>
+
+  <main id="mainContent">
+    <!-- SECTION 01: HERO PARALLAX -->
+    <section class="hero-section" id="hero" data-parallax-container>
+      <!-- Parallax Video Background -->
+      <div class="hero-bg-wrapper" data-parallax-speed="0.25">
+        <video 
+          class="hero-video" 
+          id="heroVideo" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          poster="videos/thumbnails/Video-67362_thumb.jpg">
+          <source src="videos/Video-67362.mp4" type="video/mp4">
+        </video>
+        <div class="hero-backdrop-tint"></div>
+        <div class="hero-glass-frost"></div>
+        <div class="grid-crosshairs" aria-hidden="true">
+          <div class="ch top-left">+</div>
+          <div class="ch top-right">+</div>
+          <div class="ch bottom-left">+</div>
+          <div class="ch bottom-right">+</div>
+          <div class="ch center">+</div>
+        </div>
+      </div>
+
+      <!-- Hero Parallax Floating Content -->
+      <div class="hero-content-wrap">
+        <div class="hero-top-meta" data-parallax-speed="-0.1">
+          <span class="brutal-badge glass-pill">SEC_01 // INTRODUCTORY REEL</span>
+          <span class="brutal-stamp">INDEX: 2026 // ARCHIVE</span>
+        </div>
+
+        <div class="hero-titles" data-parallax-speed="-0.2">
+          <h1 class="hero-giant-title">
+            <span class="title-line title-outline" data-mouse-parallax="15">CINEMATOGRAPHY</span>
+            <span class="title-line title-solid" data-mouse-parallax="-20">ANAS</span>
+            <span class="title-line title-mono" data-mouse-parallax="10">&amp; VISUAL ARCHIVE</span>
+          </h1>
+        </div>
+
+        <!-- Hero Glass Description Card -->
+        <div class="hero-glass-card glass-panel" data-parallax-speed="0.15" data-mouse-parallax="8">
+          <div class="glass-card-header">
+            <span class="code-tag">SYSTEM_INFO: DIRECTOR / ARCHIVIST</span>
+            <span class="coord-tag">LAT 27°10'30" N</span>
+          </div>
+          <p class="hero-statement">
+            Documenting the raw convergence of monumental stone architectures, tidal forces, nocturnal kinetics, and cultural devotion through unyielding monochrome framing and 4K optical precision.
+          </p>
+          <div class="hero-stats-row">
+            <div class="stat-box">
+              <span class="stat-number" data-count="16">16</span>
+              <span class="stat-label">MOTION FILMS</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-number" data-count="10">10</span>
+              <span class="stat-label">STILL PLATES</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-number">4K</span>
+              <span class="stat-label">PRORES LOG</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-number">B&amp;W</span>
+              <span class="stat-label">BRUTALIST CUT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-cue" data-parallax-speed="-0.05">
+          <a href="#tickerSection" class="scroll-cue-link">
+            <span class="cue-txt">EXPLORE ARCHIVE</span>
+            <div class="cue-line">
+              <span class="cue-dot"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRUTALIST TICKER 1 -->
+    <div class="ticker-wrapper" id="tickerSection" aria-hidden="true">
+      <div class="ticker-track ticker-forward">
+        <div class="ticker-content">
+          <span>ANAS // CINEMATOGRAPHY</span>
+          <span class="ticker-sep">✦</span>
+          <span>4K PRORES ARCHIVE</span>
+          <span class="ticker-sep">✦</span>
+          <span>BRUTALIST MONOCHROME</span>
+          <span class="ticker-sep">✦</span>
+          <span>ARCHITECTURAL PURITY</span>
+          <span class="ticker-sep">✦</span>
+          <span>TIDAL FORCES</span>
+          <span class="ticker-sep">✦</span>
+          <span>NOCTURNAL KINETICS</span>
+          <span class="ticker-sep">✦</span>
+          <span>16 FILMS • 10 PLATES</span>
+          <span class="ticker-sep">✦</span>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <span>ANAS // CINEMATOGRAPHY</span>
+          <span class="ticker-sep">✦</span>
+          <span>4K PRORES ARCHIVE</span>
+          <span class="ticker-sep">✦</span>
+          <span>BRUTALIST MONOCHROME</span>
+          <span class="ticker-sep">✦</span>
+          <span>ARCHITECTURAL PURITY</span>
+          <span class="ticker-sep">✦</span>
+          <span>TIDAL FORCES</span>
+          <span class="ticker-sep">✦</span>
+          <span>NOCTURNAL KINETICS</span>
+          <span class="ticker-sep">✦</span>
+          <span>16 FILMS • 10 PLATES</span>
+          <span class="ticker-sep">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER & CONTROL TOOLBAR -->
+    <section class="toolbar-section">
+      <div class="toolbar-inner glass-panel">
+        <div class="toolbar-left">
+          <span class="toolbar-label">ARCHIVE FILTER:</span>
+          <div class="filter-pills" id="filterPills">
+            <button class="pill-btn active" data-filter="all">ALL WORKS [26]</button>
+            <button class="pill-btn" data-filter="video">CINEMATOGRAPHY [16]</button>
+            <button class="pill-btn" data-filter="photo">STILLS [10]</button>
+            <button class="pill-btn" data-filter="heritage">HERITAGE</button>
+            <button class="pill-btn" data-filter="marine">COASTAL</button>
+            <button class="pill-btn" data-filter="nocturne">NOCTURNAL</button>
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <div class="view-toggles" id="viewToggles">
+            <button class="view-btn active" data-view-mode="grid" title="Brutalist Grid Layout" aria-label="Grid View">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="view-btn" data-view-mode="list" title="Technical Index Layout" aria-label="List View">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </button>
+          </div>
+          <span class="active-count-label" id="activeCountLabel">DISPLAYING 26 / 26 ENTRIES</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: CINEMATOGRAPHY (16 MOTION REELS) -->
+    <section class="archive-section" id="reels">
+      <div class="section-header">
+        <div class="header-stamp">
+          <span class="sec-index">[02]</span>
+          <span class="sec-cat">MOTION CAPTURE</span>
+        </div>
+        <h2 class="sec-title">CINEMATOGRAPHY REELS</h2>
+        <p class="sec-desc">
+          Sixteen dedicated motion studies in 4K ProRes and dynamic frame rates. Hover cards to initiate silent telemetry preview; click to open the fullscreen glass cinema terminal.
+        </p>
+      </div>
+
+      <!-- Media Grid for Videos -->
+      <div class="brutal-media-grid" id="videosGrid">
+        <!-- Videos will be rendered dynamically with full fallback in HTML -->
+        <!-- Video Item 01 -->
+        <article class="media-card glass-card video-card" data-category="video heritage" data-index="0" data-src="videos/Video-67362.mp4" data-type="video" data-thumb="videos/thumbnails/Video-67362_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/Video-67362_thumb.jpg">
+              <source src="videos/Video-67362.mp4" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:20 // 4K</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_01]</span>
+              <span class="item-tag">HERITAGE // RITUAL</span>
+            </div>
+            <h3 class="card-title">SANCTUM MARBLE ELEVATION</h3>
+            <p class="card-sub">Ceremonial white marble temple quadrangle and assembly in sacred sunlight.</p>
+            <div class="card-tech-row">
+              <span>H.264 MASTER</span>
+              <span>1276x718</span>
+              <span>60 FPS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 02 -->
+        <article class="media-card glass-card video-card" data-category="video marine" data-index="1" data-src="videos/IMG_0759.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_0759_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_0759_thumb.jpg">
+              <source src="videos/IMG_0759.MOV" type="video/quicktime">
+              <source src="videos/IMG_0759.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:04 // 4K 60FPS</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_02]</span>
+              <span class="item-tag">MARINE // KINETIC</span>
+            </div>
+            <h3 class="card-title">COASTAL CLIFFS &amp; SEA GULL FLOCK</h3>
+            <p class="card-sub">Aerial flock dynamics skimming limestone cliffs amidst breaking surf.</p>
+            <div class="card-tech-row">
+              <span>PRORES LOG</span>
+              <span>2160x3840 4K</span>
+              <span>60.00 FPS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 03 -->
+        <article class="media-card glass-card video-card" data-category="video marine" data-index="2" data-src="videos/IMG_0800.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_0800_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_0800_thumb.jpg">
+              <source src="videos/IMG_0800.MOV" type="video/quicktime">
+              <source src="videos/IMG_0800.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:05 // 4K</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_03]</span>
+              <span class="item-tag">MARINE // SURGE</span>
+            </div>
+            <h3 class="card-title">OCEAN SWELL &amp; TIDAL FRACTURE</h3>
+            <p class="card-sub">Violent hydraulic compression over submerged fossilized reef beds.</p>
+            <div class="card-tech-row">
+              <span>ULTRA HD</span>
+              <span>2160x3840</span>
+              <span>HIGH SHUTTER</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 04 -->
+        <article class="media-card glass-card video-card" data-category="video heritage" data-index="3" data-src="videos/IMG_3019.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_3019_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_3019_thumb.jpg">
+              <source src="videos/IMG_3019.MOV" type="video/quicktime">
+              <source src="videos/IMG_3019.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:03 // 4K</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_04]</span>
+              <span class="item-tag">HERITAGE // MONUMENT</span>
+            </div>
+            <h3 class="card-title">STONE ALCOVE &amp; ROOSTING AVIAN</h3>
+            <p class="card-sub">Centuries-old weathered sandstone corbels sheltering feral pigeons.</p>
+            <div class="card-tech-row">
+              <span>TELEPHOTO</span>
+              <span>2160x3840</span>
+              <span>OPTICAL ZOOM</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 05 -->
+        <article class="media-card glass-card video-card" data-category="video marine" data-index="4" data-src="videos/IMG_0734.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_0734_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_0734_thumb.jpg">
+              <source src="videos/IMG_0734.MOV" type="video/quicktime">
+              <source src="videos/IMG_0734.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:14 // 4K 60FPS</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_05]</span>
+              <span class="item-tag">MARINE // EXPEDITION</span>
+            </div>
+            <h3 class="card-title">SHORELINE EXPEDITION VISTA</h3>
+            <p class="card-sub">Sweeping pan of expansive horizon, sea foam contours, and rugged shoreline.</p>
+            <div class="card-tech-row">
+              <span>WIDE ANGLE</span>
+              <span>2160x3840</span>
+              <span>81.3 MB RAW</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 06 -->
+        <article class="media-card glass-card video-card" data-category="video marine" data-index="5" data-src="videos/IMG_0879.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_0879_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_0879_thumb.jpg">
+              <source src="videos/IMG_0879.MOV" type="video/quicktime">
+              <source src="videos/IMG_0879.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:09 // 4K</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_06]</span>
+              <span class="item-tag">MARINE // DYNAMICS</span>
+            </div>
+            <h3 class="card-title">TIDAL RESURGENCE &amp; RECESSION</h3>
+            <p class="card-sub">High-speed capture of saltwater froth receding through rocky crevices.</p>
+            <div class="card-tech-row">
+              <span>4K CINEMA</span>
+              <span>2160x3840</span>
+              <span>NATURAL LIGHT</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 07 -->
+        <article class="media-card glass-card video-card" data-category="video nocturnal" data-index="6" data-src="videos/IMG_2680.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_2680_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_2680_thumb.jpg">
+              <source src="videos/IMG_2680.MOV" type="video/quicktime">
+              <source src="videos/IMG_2680.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:17 // 4K MASTER</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_07]</span>
+              <span class="item-tag">DOCUMENTARY // CONTINUUM</span>
+            </div>
+            <h3 class="card-title">THE PASSAGE // ATMOSPHERIC DRIFT</h3>
+            <p class="card-sub">Long-take spatial steadicam motion tracking atmospheric architecture.</p>
+            <div class="card-tech-row">
+              <span>PRORES LOG</span>
+              <span>2160x3840</span>
+              <span>108.6 MB MASTER</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 08 -->
+        <article class="media-card glass-card video-card" data-category="video heritage" data-index="7" data-src="videos/IMG_2890.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_2890_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_2890_thumb.jpg">
+              <source src="videos/IMG_2890.MOV" type="video/quicktime">
+              <source src="videos/IMG_2890.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:14 // HD 60FPS</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_08]</span>
+              <span class="item-tag">URBAN // ARCHIVE</span>
+            </div>
+            <h3 class="card-title">SPATIAL ENCLOSURE STUDY</h3>
+            <p class="card-sub">Architectural framing capturing spatial depth and human scale.</p>
+            <div class="card-tech-row">
+              <span>HD CINEMA</span>
+              <span>1080x1920</span>
+              <span>60 FPS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 09 -->
+        <article class="media-card glass-card video-card" data-category="video heritage" data-index="8" data-src="videos/IMG_3377.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_3377_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_3377_thumb.jpg">
+              <source src="videos/IMG_3377.MOV" type="video/quicktime">
+              <source src="videos/IMG_3377.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:37 // FEATURE LENGTH</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_09]</span>
+              <span class="item-tag">HERITAGE // EXTENDED</span>
+            </div>
+            <h3 class="card-title">CHRONICLES OF MONUMENT</h3>
+            <p class="card-sub">Extended documentary shot unveiling ancient craftsmanship and stone geometry.</p>
+            <div class="card-tech-row">
+              <span>DOCUMENTARY</span>
+              <span>1080x1920</span>
+              <span>105 MB MASTER</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 10 -->
+        <article class="media-card glass-card video-card" data-category="video documentary" data-index="9" data-src="videos/IMG_5926.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_5926_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_5926_thumb.jpg">
+              <source src="videos/IMG_5926.MOV" type="video/quicktime">
+              <source src="videos/IMG_5926.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:08 // 4K</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_10]</span>
+              <span class="item-tag">DOCUMENTARY // STREET</span>
+            </div>
+            <h3 class="card-title">STREET TEMPO &amp; TEXTURE</h3>
+            <p class="card-sub">High kinetic cadence capturing raw street dynamism and cultural pulse.</p>
+            <div class="card-tech-row">
+              <span>4K MASTER</span>
+              <span>2160x3840</span>
+              <span>STREET RIG</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 11 -->
+        <article class="media-card glass-card video-card" data-category="video documentary" data-index="10" data-src="videos/IMG_6584.MOV" data-type="video" data-thumb="videos/thumbnails/IMG_6584_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_6584_thumb.jpg">
+              <source src="videos/IMG_6584.MOV" type="video/quicktime">
+              <source src="videos/IMG_6584.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:20 // 4K 60FPS</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_11]</span>
+              <span class="item-tag">CINEMA // DIRECTION</span>
+            </div>
+            <h3 class="card-title">KINETIC CONTINUUM SEQUENCE</h3>
+            <p class="card-sub">Fluid spatial tracking examining environmental lighting transitions.</p>
+            <div class="card-tech-row">
+              <span>4K LOG</span>
+              <span>2160x3840</span>
+              <span>126 MB FILE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 12 -->
+        <article class="media-card glass-card video-card" data-category="video nocturne" data-index="11" data-src="videos/IMG_6851.mov" data-type="video" data-thumb="videos/thumbnails/IMG_6851_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_6851_thumb.jpg">
+              <source src="videos/IMG_6851.mov" type="video/quicktime">
+              <source src="videos/IMG_6851.mov" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:28 // 4K LOW-LIGHT</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_12]</span>
+              <span class="item-tag">NOCTURNE // LIGHT ART</span>
+            </div>
+            <h3 class="card-title">NOCTURNAL VORTEX I</h3>
+            <p class="card-sub">Kinetic light ribbons slicing pure darkness in an immersive ambient display.</p>
+            <div class="card-tech-row">
+              <span>4K SENSOR</span>
+              <span>2160x3840</span>
+              <span>NIGHT LOG</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 13 -->
+        <article class="media-card glass-card video-card" data-category="video nocturne" data-index="12" data-src="videos/IMG_6867.mov" data-type="video" data-thumb="videos/thumbnails/IMG_6867_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/IMG_6867_thumb.jpg">
+              <source src="videos/IMG_6867.mov" type="video/quicktime">
+              <source src="videos/IMG_6867.mov" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:28 // 4K 60FPS</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_13]</span>
+              <span class="item-tag">NOCTURNE // PRISM</span>
+            </div>
+            <h3 class="card-title">NOCTURNAL VORTEX II</h3>
+            <p class="card-sub">High dynamic range study of radiant spoke canopies piercing the night sky.</p>
+            <div class="card-tech-row">
+              <span>4K MASTER</span>
+              <span>2160x3840</span>
+              <span>127 MB MASTER</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 14 -->
+        <article class="media-card glass-card video-card" data-category="video documentary" data-index="13" data-src="videos/copy_3A8FA5E9-28DE-44FA-A1A4-0137FE3E9D8E.mov" data-type="video" data-thumb="videos/thumbnails/copy_3A8FA5E9-28DE-44FA-A1A4-0137FE3E9D8E_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/copy_3A8FA5E9-28DE-44FA-A1A4-0137FE3E9D8E_thumb.jpg">
+              <source src="videos/copy_3A8FA5E9-28DE-44FA-A1A4-0137FE3E9D8E.mov" type="video/quicktime">
+              <source src="videos/copy_3A8FA5E9-28DE-44FA-A1A4-0137FE3E9D8E.mov" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:22 // HD</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_14]</span>
+              <span class="item-tag">TRAVEL // TRANSIT</span>
+            </div>
+            <h3 class="card-title">PASSING HORIZONS &amp; VISTAS</h3>
+            <p class="card-sub">Dynamic motion perspective traversing varied regional topography.</p>
+            <div class="card-tech-row">
+              <span>HD 60FPS</span>
+              <span>1080x1920</span>
+              <span>STEADY TRACK</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 15 -->
+        <article class="media-card glass-card video-card" data-category="video heritage" data-index="14" data-src="videos/copy_44B5F516-1AED-4A9F-AA06-F5B360F81984.MOV" data-type="video" data-thumb="videos/thumbnails/copy_44B5F516-1AED-4A9F-AA06-F5B360F81984_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/copy_44B5F516-1AED-4A9F-AA06-F5B360F81984_thumb.jpg">
+              <source src="videos/copy_44B5F516-1AED-4A9F-AA06-F5B360F81984.MOV" type="video/quicktime">
+              <source src="videos/copy_44B5F516-1AED-4A9F-AA06-F5B360F81984.MOV" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:20 // 4K RAW</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_15]</span>
+              <span class="item-tag">HERITAGE // GEOMETRY</span>
+            </div>
+            <h3 class="card-title">SACRED ARCHITECTURAL ELEVATIONS</h3>
+            <p class="card-sub">Sweeping vertical tilt along carved monumental sandstone façades.</p>
+            <div class="card-tech-row">
+              <span>4K CINEMA</span>
+              <span>2160x3840</span>
+              <span>58.2 MB FILE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Item 16 -->
+        <article class="media-card glass-card video-card" data-category="video documentary" data-index="15" data-src="videos/copy_8F61E892-AC9C-4581-95AE-9C2674804CE5.mov" data-type="video" data-thumb="videos/thumbnails/copy_8F61E892-AC9C-4581-95AE-9C2674804CE5_thumb.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <video class="card-video" loop muted playsinline preload="metadata" poster="videos/thumbnails/copy_8F61E892-AC9C-4581-95AE-9C2674804CE5_thumb.jpg">
+              <source src="videos/copy_8F61E892-AC9C-4581-95AE-9C2674804CE5.mov" type="video/quicktime">
+              <source src="videos/copy_8F61E892-AC9C-4581-95AE-9C2674804CE5.mov" type="video/mp4">
+            </video>
+            <div class="card-overlay">
+              <div class="play-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">00:18 // HD</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[REEL_16]</span>
+              <span class="item-tag">CULTURE // DEVOTION</span>
+            </div>
+            <h3 class="card-title">RHYTHMS OF CEREMONY</h3>
+            <p class="card-sub">Dynamic collective gathering with traditional banners and devotional chanting.</p>
+            <div class="card-tech-row">
+              <span>HD 60FPS</span>
+              <span>1080x1920</span>
+              <span>DOCUMENTARY</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 03: STILL ARCHIVE PLATES (10 MASTER PHOTOGRAPHS) -->
+    <section class="archive-section" id="stills">
+      <div class="section-header">
+        <div class="header-stamp">
+          <span class="sec-index">[03]</span>
+          <span class="sec-cat">PHOTOGRAPHIC MONOGRAPHS</span>
+        </div>
+        <h2 class="sec-title">ARCHITECTURAL &amp; CULTURAL PLATES</h2>
+        <p class="sec-desc">
+          Ten exhibition plates shot with high optical fidelity. Examining Mughal symmetries, classical choreographies, and nocturnal geometries in strict monochrome tones.
+        </p>
+      </div>
+
+      <div class="brutal-media-grid" id="stillsGrid">
+        <!-- Photo Plate 01 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="16" data-src="images/IMG_1167_Original.jpg" data-type="photo" data-thumb="images/IMG_1167_Original.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_1167_Original.jpg" alt="Choreography of Devotion - Bharatnatyam Classical Dancers in Temple Courtyard" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_01 // 48MP RAW</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_01]</span>
+              <span class="item-tag">CULTURE // CHOREOGRAPHY</span>
+            </div>
+            <h3 class="card-title">CHOREOGRAPHY OF DEVOTION</h3>
+            <p class="card-sub">Classical temple dancers in pleated silks, poised in synchronized mudra geometry.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/120s</span>
+              <span>ISO 80</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 02 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="17" data-src="images/IMG_1172_Original.jpg" data-type="photo" data-thumb="images/IMG_1172_Original.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_1172_Original.jpg" alt="Gestures of the Sacred - Classical Dancer Expressions" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_02 // RAW</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_02]</span>
+              <span class="item-tag">CULTURE // EXPRESSION</span>
+            </div>
+            <h3 class="card-title">GESTURE &amp; SACRED FORM</h3>
+            <p class="card-sub">Dramatic portraiture of classical dancers during the festive courtyard procession.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/125s</span>
+              <span>ISO 64</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 03 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="18" data-src="images/IMG_3136.jpg" data-type="photo" data-thumb="images/IMG_3136.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3136.jpg" alt="Darwaza-i-rauza - The Great Mughal Gateway of the Taj Mahal" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_03 // 48MP ULTRA-RES</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_03]</span>
+              <span class="item-tag">MUGHAL // ARCHITECTURE</span>
+            </div>
+            <h3 class="card-title">DARWAZA-I-RAUZA GATEWAY</h3>
+            <p class="card-sub">The colossal red sandstone gateway to the Taj Mahal complex, framing ancient iwans.</p>
+            <div class="card-tech-row">
+              <span>F/1.8 • 1/1400s</span>
+              <span>ISO 50</span>
+              <span>4284x5712 RAW</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 04 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="19" data-src="images/IMG_3160.jpg" data-type="photo" data-thumb="images/IMG_3160.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3160.jpg" alt="The Imperial Span - Mughal Sandstone Pavilion and Dome Symmetry" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_04 // 48MP</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_04]</span>
+              <span class="item-tag">MUGHAL // SYMMETRY</span>
+            </div>
+            <h3 class="card-title">THE IMPERIAL SPAN</h3>
+            <p class="card-sub">Sandstone chattris, white marble domes, and verdant lawns stretching across the courtyard.</p>
+            <div class="card-tech-row">
+              <span>F/1.8 • 1/2100s</span>
+              <span>ISO 50</span>
+              <span>4284x5712 RAW</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 05 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="20" data-src="images/IMG_3170_Original.jpg" data-type="photo" data-thumb="images/IMG_3170_Original.jpg">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3170_Original.jpg" alt="Taj Mahal Marble Dome and Conservation Scaffolding" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_05 // HIGH-CONTRAST</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_05]</span>
+              <span class="item-tag">HERITAGE // SCAFFOLD</span>
+            </div>
+            <h3 class="card-title">MARBLE MONUMENT &amp; STEEL SCAFFOLD</h3>
+            <p class="card-sub">Intricate Quranic calligraphy and Makrana marble juxtaposed against modular restoration grid.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/3200s</span>
+              <span>ISO 64</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 06 -->
+        <article class="media-card glass-card photo-card" data-category="photo brut" data-index="21" data-src="images/IMG_3300.JPG" data-type="photo" data-thumb="images/IMG_3300.JPG">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3300.JPG" alt="Brutalist Clock Tower Monolith Against Dusk Sky" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_06 // BRUTALIST</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_06]</span>
+              <span class="item-tag">BRUTALISM // MONOLITH</span>
+            </div>
+            <h3 class="card-title">CHRONOS CONCRETE MONOLITH</h3>
+            <p class="card-sub">Angular brutalist concrete tower with illuminated clock face puncturing dusky gloom.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/60s</span>
+              <span>ISO 125</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 07 -->
+        <article class="media-card glass-card photo-card" data-category="photo nocturne" data-index="22" data-src="images/IMG_3663.JPG" data-type="photo" data-thumb="images/IMG_3663.JPG">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3663.JPG" alt="Radial Nocturnal Light Spoke Kinetic Array" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_07 // NOCTURNE</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_07]</span>
+              <span class="item-tag">NOCTURNE // GEOMETRIC</span>
+            </div>
+            <h3 class="card-title">RADIAL ILLUMINATION SPOKES</h3>
+            <p class="card-sub">Spoke-wheel geometric light web exploding out into black void.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/25s</span>
+              <span>ISO 640</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 08 -->
+        <article class="media-card glass-card photo-card" data-category="photo nocturne" data-index="23" data-src="images/IMG_3676.JPG" data-type="photo" data-thumb="images/IMG_3676.JPG">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3676.JPG" alt="Tensile Light Canopies and Night Sky Perspective" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_08 // TENSION</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_08]</span>
+              <span class="item-tag">LIGHT // CANOPY</span>
+            </div>
+            <h3 class="card-title">TENSILE CANOPY SPECTRA I</h3>
+            <p class="card-sub">Suspended festival drapery illuminated by sequential micro-luminaire strings.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/20s</span>
+              <span>ISO 800</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 09 -->
+        <article class="media-card glass-card photo-card" data-category="photo nocturne" data-index="24" data-src="images/IMG_3677.JPG" data-type="photo" data-thumb="images/IMG_3677.JPG">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_3677.JPG" alt="Festive Lighting Ribbon Structure Angle Study" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_09 // LOW LIGHT</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_09]</span>
+              <span class="item-tag">LIGHT // CANOPY</span>
+            </div>
+            <h3 class="card-title">TENSILE CANOPY SPECTRA II</h3>
+            <p class="card-sub">Angular counter-perspective highlighting architectural suspension wires and radial symmetry.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/20s</span>
+              <span>ISO 800</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo Plate 10 -->
+        <article class="media-card glass-card photo-card" data-category="photo heritage" data-index="25" data-src="images/IMG_5280.JPG" data-type="photo" data-thumb="images/IMG_5280.JPG">
+          <div class="card-glass-glow"></div>
+          <div class="card-crosshair tl">+</div><div class="card-crosshair tr">+</div>
+          <div class="card-crosshair bl">+</div><div class="card-crosshair br">+</div>
+          <div class="card-frame" data-parallax-inner>
+            <img class="card-image" src="images/IMG_5280.JPG" alt="Colonial Architectural Dome and Pennant Flag Against Cirrus Clouds" loading="lazy">
+            <div class="card-overlay">
+              <div class="zoom-badge glass-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="timecode-badge glass-pill">PLATE_10 // HERITAGE</div>
+          </div>
+          <div class="card-info">
+            <div class="card-meta">
+              <span class="item-num">[PLATE_10]</span>
+              <span class="item-tag">HERITAGE // SARACENIC</span>
+            </div>
+            <h3 class="card-title">COLONIAL DOME &amp; SICKLE BANNER</h3>
+            <p class="card-sub">Ornate stone cupolas, arches, and blowing pennant framed by wispy cirrus cloud striations.</p>
+            <div class="card-tech-row">
+              <span>F/1.6 • 1/1500s</span>
+              <span>ISO 50</span>
+              <span>3024x4032</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 04: FEATURED PARALLAX MONOGRAPH -->
+    <section class="monograph-section" id="parallax-focus">
+      <div class="monograph-inner">
+        <div class="monograph-sticky-head">
+          <span class="sec-index">[04]</span>
+          <h2 class="monograph-title">CURATORIAL MONOGRAPH</h2>
+          <span class="monograph-tag">DUALITIES OF STONE &amp; SURGE</span>
+        </div>
+
+        <!-- Parallax Dual Split Showcase -->
+        <div class="monograph-grid">
+          <!-- Left Column: Monumental Stone (Parallax Down) -->
+          <div class="monograph-col col-left" data-parallax-speed="0.12">
+            <div class="monograph-card glass-panel">
+              <div class="mono-img-wrap">
+                <img src="images/IMG_3170_Original.jpg" alt="Taj Mahal Marble Dome Scaffolding Study" loading="lazy">
+                <div class="mono-stamp">FRAME 3170 // MAKRAHA</div>
+              </div>
+              <div class="mono-text">
+                <span class="mono-kicker">MONUMENTAL PERMANENCE</span>
+                <h3>MAKRAWA MARBLE &amp; CONSERVATION GRID</h3>
+                <p>
+                  Centuries of Mughal architectural permanence meeting the ephemeral geometry of restoration scaffolding. In black and white, the contrast of white crystalline marble against rigid steel poles becomes an abstract study in tension and endurance.
+                </p>
+                <div class="mono-specs">
+                  <span>AGRA, INDIA</span>
+                  <span>27.1751° N</span>
+                  <span>HIGH KEY B&amp;W</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="monograph-card glass-panel" style="margin-top: 4rem;">
+              <div class="mono-img-wrap">
+                <img src="images/IMG_3136.jpg" alt="Darwaza-i-rauza Great Gateway" loading="lazy">
+                <div class="mono-stamp">FRAME 3136 // DARWAZA</div>
+              </div>
+              <div class="mono-text">
+                <span class="mono-kicker">SYMMETRIC ENCLOSURE</span>
+                <h3>THE GREAT GATEWAY // VAULTED IWANS</h3>
+                <p>
+                  The gateway is not merely an entrance; it is a camera obscura framing history. Monumental archways etched with inlaid white marble calligraphy against sandstone slabs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Coastal Surge (Parallax Up) -->
+          <div class="monograph-col col-right" data-parallax-speed="-0.15">
+            <div class="monograph-card glass-panel">
+              <div class="mono-video-wrap">
+                <video autoplay loop muted playsinline poster="videos/thumbnails/IMG_0759_thumb.jpg">
+                  <source src="videos/IMG_0759.MOV" type="video/quicktime">
+                  <source src="videos/IMG_0759.MOV" type="video/mp4">
+                </video>
+                <div class="mono-stamp">REEL 0759 // SURF</div>
+              </div>
+              <div class="mono-text">
+                <span class="mono-kicker">FLUID MOTION</span>
+                <h3>TIDAL FRACTURE &amp; AVIAN SKIMMERS</h3>
+                <p>
+                  While stone commands silence, the sea commands cadence. High frame-rate vertical cinematography dissects the instantaneous explosion of sea spray over jagged limestone shelves, accompanied by circling sea birds riding onshore thermal drafts.
+                </p>
+                <div class="mono-specs">
+                  <span>COASTAL REEL</span>
+                  <span>4K 60FPS</span>
+                  <span>HYDRAULIC SURGE</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="monograph-card glass-panel" style="margin-top: 4rem;">
+              <div class="mono-img-wrap">
+                <img src="images/IMG_3663.JPG" alt="Nocturnal Light Radial Spoke Structure" loading="lazy">
+                <div class="mono-stamp">FRAME 3663 // OBSIDIAN</div>
+              </div>
+              <div class="mono-text">
+                <span class="mono-kicker">NOCTURNAL DISSECTION</span>
+                <h3>RADIAL LIGHT ARRAYS</h3>
+                <p>
+                  Light spokes suspended in an infinite void. Brutal high-contrast photography strips away unnecessary color, leaving only pure luminescence and skeletal geometry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRUTALIST TICKER 2 -->
+    <div class="ticker-wrapper" aria-hidden="true">
+      <div class="ticker-track ticker-reverse">
+        <div class="ticker-content">
+          <span>MONUMENTAL ARCHITECTURE</span>
+          <span class="ticker-sep">/</span>
+          <span>4K KINETIC CINEMATOGRAPHY</span>
+          <span class="ticker-sep">/</span>
+          <span>ANAS VISUAL DIRECTORY</span>
+          <span class="ticker-sep">/</span>
+          <span>RAW PRORES ACQUISITION</span>
+          <span class="ticker-sep">/</span>
+          <span>GLASSMORPHIIC RIGOR</span>
+          <span class="ticker-sep">/</span>
+          <span>TIME • SPACE • GEOMETRY</span>
+          <span class="ticker-sep">/</span>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <span>MONUMENTAL ARCHITECTURE</span>
+          <span class="ticker-sep">/</span>
+          <span>4K KINETIC CINEMATOGRAPHY</span>
+          <span class="ticker-sep">/</span>
+          <span>ANAS VISUAL DIRECTORY</span>
+          <span class="ticker-sep">/</span>
+          <span>RAW PRORES ACQUISITION</span>
+          <span class="ticker-sep">/</span>
+          <span>GLASSMORPHIIC RIGOR</span>
+          <span class="ticker-sep">/</span>
+          <span>TIME • SPACE • GEOMETRY</span>
+          <span class="ticker-sep">/</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 05: DIRECTOR'S MANIFESTO & GEAR -->
+    <section class="manifesto-section" id="statement">
+      <div class="manifesto-inner">
+        <div class="section-header">
+          <div class="header-stamp">
+            <span class="sec-index">[05]</span>
+            <span class="sec-cat">DIRECTORIAL DISCOURSE</span>
+          </div>
+          <h2 class="sec-title">THE BRUTALIST LENS MANIFESTO</h2>
+        </div>
+
+        <div class="manifesto-grid">
+          <!-- Text column -->
+          <div class="manifesto-content glass-panel" data-parallax-speed="0.08">
+            <div class="manifesto-badge glass-pill">AESTHETIC CODEX // ANAS</div>
+            <blockquote class="manifesto-quote">
+              "Color often seduces the eye away from structural truth. In monochrome, form, mass, velocity, and luminance cannot hide."
+            </blockquote>
+            <p>
+              My practice is founded on high-precision optical observation: dissecting the heavy weight of centuries-old Mughal architecture, the kinetic violence of ocean swells against limestone reefs, and the rhythmic sanctity of cultural rituals.
+            </p>
+            <p>
+              By combining brutalist visual composition—unflinching angles, asymmetric tension, raw borders—with modern frosted glass interfaces, each frame operates both as a scientific plate and an evocative motion poem.
+            </p>
+            <div class="director-signature">
+              <span class="sig-name">ANAS</span>
+              <span class="sig-title">CINEMATOGRAPHER &amp; ARCHIVIST</span>
+            </div>
+          </div>
+
+          <!-- Technical Apparatus Glass Panel -->
+          <div class="apparatus-panel glass-panel" data-parallax-speed="-0.08">
+            <div class="panel-header">
+              <span class="panel-code">TECH_SPECS // OPTICAL RIG</span>
+              <span class="panel-status">ONLINE</span>
+            </div>
+
+            <div class="specs-list">
+              <div class="spec-row">
+                <span class="spec-key">ACQUISITION</span>
+                <span class="spec-val">4K UHD / ProRes Log 10-Bit</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">STILLS SENSOR</span>
+                <span class="spec-val">48MP Quad-Bayer RAW DNG</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">FRAME CADENCE</span>
+                <span class="spec-val">24.00p / 60.00p / 120p High Speed</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">OPTICAL AXIS</span>
+                <span class="spec-val">24mm - 120mm Equivalent Telephoto</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">STABILIZATION</span>
+                <span class="spec-val">3-Axis Motorized Gimbal / Optical IBIS</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">AUDIO DESIGN</span>
+                <span class="spec-val">Binaural Ambient Spatial Array</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">MONOCHROME LUT</span>
+                <span class="spec-val">Custom 3D Contrast-Curve Silver LUT</span>
+              </div>
+            </div>
+
+            <!-- Brutalist Badge Cluster -->
+            <div class="badge-cluster">
+              <span class="cluster-tag glass-pill">ARCHITECTURAL</span>
+              <span class="cluster-tag glass-pill">CULTURAL RITUAL</span>
+              <span class="cluster-tag glass-pill">MARINE SURGE</span>
+              <span class="cluster-tag glass-pill">4K MASTERED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: CONTACT / INQUIRY TERMINAL -->
+    <section class="contact-section" id="contact">
+      <div class="contact-inner glass-panel" data-parallax-speed="0.05">
+        <div class="contact-crosshair tl">+</div><div class="contact-crosshair tr">+</div>
+        <div class="contact-crosshair bl">+</div><div class="contact-crosshair br">+</div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="sec-index">[06]</span>
+            <h2 class="contact-title">INITIATE INQUIRY // COMMISSIONS</h2>
+            <p class="contact-desc">
+              Available worldwide for architectural documentation, cinematic direction, commercial campaigns, and exhibition prints.
+            </p>
+
+            <div class="contact-meta-block">
+              <div class="meta-line">
+                <span class="meta-label">DIRECT COMM:</span>
+                <a href="mailto:anas.cinematography@gmail.com" class="meta-link">anas.cinematography@gmail.com</a>
+              </div>
+              <div class="meta-line">
+                <span class="meta-label">DISPATCH HUB:</span>
+                <span class="meta-text">DELHI / AGRA / WORLDWIDE</span>
+              </div>
+              <div class="meta-line">
+                <span class="meta-label">AVAILABILITY:</span>
+                <span class="meta-text pulse-text">ACCEPTING COMMISSIONS Q3–Q4 2026</span>
+              </div>
+            </div>
+
+            <!-- Social Links Brutal Style -->
+            <div class="social-links-row">
+              <a href="#" class="social-chip glass-btn" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+              <a href="#" class="social-chip glass-btn" target="_blank" rel="noopener">VIMEO ↗</a>
+              <a href="#" class="social-chip glass-btn" target="_blank" rel="noopener">YOUTUBE ↗</a>
+              <a href="#" class="social-chip glass-btn" target="_blank" rel="noopener">BEHANCE ↗</a>
+            </div>
+          </div>
+
+          <!-- Glass Brutalist Contact Form -->
+          <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); showFormSuccess();">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="userName" class="form-label">IDENTITY / NAME *</label>
+                <input type="text" id="userName" name="name" class="glass-input" placeholder="e.g. Elena Rostova" required>
+              </div>
+              <div class="form-group">
+                <label for="userEmail" class="form-label">TRANSMISSION / EMAIL *</label>
+                <input type="email" id="userEmail" name="email" class="glass-input" placeholder="client@studio.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="projectType" class="form-label">SCOPE OF ENGAGEMENT</label>
+              <select id="projectType" name="projectType" class="glass-input">
+                <option value="cinematography">Cinematography &amp; Film Direction</option>
+                <option value="architecture">Architectural Documentation</option>
+                <option value="commercial">Commercial Campaign &amp; Editorial</option>
+                <option value="exhibition">Exhibition Print Purchase</option>
+                <option value="other">Other Creative Collaboration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="messageText" class="form-label">PROJECT BRIEF &amp; TIMELINE *</label>
+              <textarea id="messageText" name="message" class="glass-input glass-textarea" rows="4" placeholder="Detail your project requirements, location, and dates..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn glass-btn" id="submitBtn">
+              <span class="btn-bracket">[</span>
+              <span class="btn-label">TRANSMIT BRIEF</span>
+              <span class="btn-bracket">]</span>
+            </button>
+
+            <div class="form-success-alert glass-panel" id="formSuccess">
+              <span class="alert-icon">✓</span>
+              <span>TRANSMISSION RECEIVED. ANAS WILL RESPOND WITHIN 24 HOURS.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BRUTALIST FOOTER -->
+  <footer class="glass-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="f-brand">ANAS // PORTFOLIO</span>
+        <span class="f-copy">© 2026 ANAS. ALL OPTICAL ARCHIVES RESERVED.</span>
+      </div>
+      <div class="footer-center">
+        <span class="f-theme">STRICT MONOCHROME • GLASSMORPHIIC BRUTALISM • 60 FPS</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top glass-btn" id="backToTop">
+          <span>TOP ↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN GLASS CINEMA LIGHTBOX MODAL -->
+  <div class="cinema-modal" id="cinemaModal" aria-hidden="true" role="dialog" aria-label="Media Cinema Lightbox">
+    <div class="modal-glass-backdrop" id="modalBackdrop"></div>
+    
+    <div class="modal-dialog glass-panel" id="modalDialog">
+      <!-- Modal Top Bar -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge glass-pill" id="modalBadge">REEL_01 // 4K</span>
+          <h3 class="modal-title" id="modalTitle">MEDIA TITLE</h3>
+        </div>
+        
+        <div class="modal-actions">
+          <!-- B&W / Color Switch in Modal -->
+          <button class="modal-btn glass-btn" id="modalFilterToggle" title="Toggle Modal B&W / Color">
+            <span id="modalFilterText">FILTER: B&amp;W</span>
+          </button>
+          <!-- Close Button -->
+          <button class="modal-btn glass-btn modal-close" id="modalClose" aria-label="Close Lightbox">
+            <span>[ESC] ✕</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Media Canvas Container -->
+      <div class="modal-media-canvas" id="modalMediaCanvas">
+        <!-- Injected via JavaScript: video or img element -->
+      </div>
+
+      <!-- Video Control Bar (Visible for videos) -->
+      <div class="modal-video-controls glass-panel" id="modalVideoControls">
+        <button class="control-btn" id="modalPlayPauseBtn" aria-label="Play or Pause">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" id="playPauseIcon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </button>
+        <span class="modal-time" id="modalCurrentTime">00:00</span>
+        <div class="modal-scrubber-track" id="modalScrubberTrack">
+          <div class="modal-scrubber-fill" id="modalScrubberFill"></div>
+        </div>
+        <span class="modal-time" id="modalDuration">00:00</span>
+        <button class="control-btn" id="modalMuteBtn" aria-label="Mute or Unmute">
+          <span id="modalMuteIcon">🔇</span>
+        </button>
+        <button class="control-btn" id="modalFullscreenBtn" aria-label="Fullscreen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Footer Info -->
+      <div class="modal-footer">
+        <div class="modal-tech-details" id="modalTechDetails">
+          <span>PRORES LOG</span>
+          <span>4K MASTER</span>
+          <span>NATURAL LIGHT</span>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="modal-nav-controls">
+          <button class="modal-btn glass-btn" id="modalPrevBtn" aria-label="Previous Item">
+            <span>← PREV [←]</span>
+          </button>
+          <span class="modal-counter" id="modalCounter">01 / 26</span>
+          <button class="modal-btn glass-btn" id="modalNextBtn" aria-label="Next Item">
+            <span>NEXT [→] →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
